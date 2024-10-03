@@ -5,6 +5,10 @@ import br.com.cadastro.model.address.AddressModel;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -16,25 +20,47 @@ public class ClientModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull(message = "O nome não pode ser nulo")
+    @NotEmpty(message = "O nome não pode ser vazio")
     private String name;
 
+    @NotNull(message = "O e-mail não pode ser nulo.")
+    @NotEmpty(message = "O e-mail não pode ser vazio.")
+    @Email(message = "O e-mail deve ser válido.")
     private String email;
 
+    @NotNull(message = "A senha não pode ser nula")
+    @NotEmpty(message = "A senha não pode ser vazia")
+    @Size(min = 8, message = "A senha deve ter pelo menos 8 caracteres.")
     private String password;
 
-    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
+    @NotNull(message = "O endereço não pode ser nulo")
+    @OneToOne(mappedBy = "clientModel", cascade = CascadeType.ALL)
     private AddressModel addressModel;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @NotNull(message = "A conta não pode ser nula")
+    @OneToMany(mappedBy = "clientModel", cascade = CascadeType.ALL)
     private List<AccountModel> accountModel;
-    public ClientModel() {
-    }
+    public ClientModel() {}
 
-    public ClientModel(String name, String email, String password, AddressModel addressModel) {
+    public ClientModel(String name, String email, String password, AddressModel addressModel, List<AccountModel> accountModel) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome não pode ser nulo ou vazio.");
+        }
+        if (password == null || password.trim().isEmpty()) {
+            throw new IllegalArgumentException("A senha não pode ser nula ou vazia.");
+        }
+        if (addressModel == null) {
+            throw new IllegalArgumentException("O endereço não pode ser vazio");
+        }
+        if (accountModel == null || accountModel.isEmpty()) {
+            throw new IllegalArgumentException("A conta não pode ser nula ou vazia.");
+        }
         this.name = name;
         this.email = email;
         this.password = password;
         this.addressModel = addressModel;
+        this.accountModel = accountModel;
     }
 
     @Override
