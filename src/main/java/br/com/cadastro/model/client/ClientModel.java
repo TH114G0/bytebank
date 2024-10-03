@@ -1,5 +1,7 @@
-package br.com.cadastro.model;
+package br.com.cadastro.model.client;
 
+import br.com.cadastro.model.account.AccountModel;
+import br.com.cadastro.model.address.AddressModel;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -8,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "client")
 @Data
-public class Client {
+public class ClientModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,28 +23,28 @@ public class Client {
     private String password;
 
     @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
-    private Address address;
+    private AddressModel addressModel;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
-    private List<Account> account;
-    public Client() {
+    private List<AccountModel> accountModel;
+    public ClientModel() {
     }
 
-    public Client(String name, String email, String password, Address address) {
+    public ClientModel(String name, String email, String password, AddressModel addressModel) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.address = address;
+        this.addressModel = addressModel;
     }
 
     @Override
     public String toString() {
-        return "Client{" +
+        return "ClientModel{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", address=" + address +
+                ", addressModel=" + addressModel +
                 '}';
     }
 }

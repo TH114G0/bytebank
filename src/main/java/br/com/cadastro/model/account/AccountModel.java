@@ -1,12 +1,13 @@
-package br.com.cadastro.model;
+package br.com.cadastro.model.account;
 
+import br.com.cadastro.model.client.ClientModel;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Table(name = "account")
 @Data
-public class Account {
+public class AccountModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,26 +20,26 @@ public class Account {
     private double balance;
 
     @JoinColumn(name = "client_id")
-    private Client client;
+    private ClientModel clientModel;
 
-    public Account() {
+    public AccountModel() {
     }
 
-    public Account(int number, AccountType type, double balance, Client client) {
+    public AccountModel(int number, AccountType type, double balance, ClientModel clientModel) {
         this.number = number;
         this.type = type;
         this.balance = balance;
-        this.client = client;
+        this.clientModel = clientModel;
     }
 
     @Override
     public String toString() {
-        return "Account{" +
+        return "AccountModel{" +
                 "id=" + id +
                 ", number=" + number +
                 ", type='" + type + '\'' +
                 ", balance=" + balance +
-                ", client=" + client +
+                ", clientModel=" + clientModel +
                 '}';
     }
 }

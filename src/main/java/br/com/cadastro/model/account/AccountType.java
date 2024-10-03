@@ -1,4 +1,4 @@
-package br.com.cadastro.model;
+package br.com.cadastro.model.account;
 
 public enum AccountType {
     SAVINGS_ACCOUNT,

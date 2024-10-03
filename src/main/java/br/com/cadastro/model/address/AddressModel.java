@@ -1,12 +1,13 @@
-package br.com.cadastro.model;
+package br.com.cadastro.model.address;
 
+import br.com.cadastro.model.client.ClientModel;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Table(name = "address")
 @Data
-public class Address {
+public class AddressModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,28 +23,28 @@ public class Address {
 
     @OneToOne
     @JoinColumn(name = "client_id")
-    private Client client;
+    private ClientModel clientModel;
 
-    public Address() {
+    public AddressModel() {
     }
 
-    public Address(String street, int number, String city, String states, Client client) {
+    public AddressModel(String street, int number, String city, String states, ClientModel clientModel) {
         this.street = street;
         this.number = number;
         this.city = city;
         this.states = states;
-        this.client = client;
+        this.clientModel = clientModel;
     }
 
     @Override
     public String toString() {
-        return "Address{" +
+        return "AddressModel{" +
                 "id=" + id +
                 ", street='" + street + '\'' +
                 ", number=" + number +
                 ", city='" + city + '\'' +
                 ", states='" + states + '\'' +
-                ", client=" + client +
+                ", clientModel=" + clientModel +
                 '}';
     }
 }
