@@ -19,7 +19,7 @@ public class AccountModel {
     @Min(value = 0, message = "O número da conta deve ser pelo menos 0")
     private int number;
 
-    @NotNull(message = "O tipo de conta não pode ser nulo")
+    @NotNull(message = "O tipo da conta não pode ser nulo")
     @Enumerated(EnumType.STRING)
     private AccountType type;
 
