@@ -9,6 +9,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -40,37 +41,29 @@ public class ClientModel {
 
     @NotNull(message = "A conta não pode ser nula")
     @OneToMany(mappedBy = "clientModel", cascade = CascadeType.ALL)
-    private List<AccountModel> accountModel;
+    private List<AccountModel> accountModel = new ArrayList<>();
+
     public ClientModel() {}
 
-    public ClientModel(String name, String email, String password, AddressModel addressModel, List<AccountModel> accountModel) {
+    public ClientModel(String name, String email, String password) {
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("O nome não pode ser nulo ou vazio.");
         }
         if (password == null || password.trim().isEmpty()) {
             throw new IllegalArgumentException("A senha não pode ser nula ou vazia.");
         }
-        if (addressModel == null) {
-            throw new IllegalArgumentException("O endereço não pode ser vazio");
-        }
-        if (accountModel == null || accountModel.isEmpty()) {
-            throw new IllegalArgumentException("A conta não pode ser nula ou vazia.");
-        }
         this.name = name;
         this.email = email;
         this.password = password;
-        this.addressModel = addressModel;
-        this.accountModel = accountModel;
     }
 
     @Override
     public String toString() {
         return "ClientModel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", addressModel=" + addressModel +
+                "name='" + (name != null ? name : "N/A") + '\'' +
+                ", email='" + (email != null ? email : "N/A") + '\'' +
+                ", addressModel=" + (addressModel != null ? addressModel.toString() : "N/A") +
+                // outros atributos
                 '}';
     }
 }
