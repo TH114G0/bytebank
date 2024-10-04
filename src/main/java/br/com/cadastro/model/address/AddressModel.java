@@ -32,8 +32,8 @@ public class AddressModel {
     @NotEmpty(message = "O estado não pode ser vazio")
     private String states;
 
-    @NotNull(message = "O cliente não pode ser nulo")
     @OneToOne
+    @NotNull(message = "O cliente não pode ser nulo")
     @JoinColumn(name = "client_id")
     private ClientModel clientModel;
 
