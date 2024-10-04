@@ -60,10 +60,8 @@ public class ClientModel {
     @Override
     public String toString() {
         return "ClientModel{" +
-                "name='" + (name != null ? name : "N/A") + '\'' +
-                ", email='" + (email != null ? email : "N/A") + '\'' +
-                ", addressModel=" + (addressModel != null ? addressModel.toString() : "N/A") +
-                // outros atributos
-                '}';
+                "id= '" + id + '\'' +
+                ", name='" + (name != null ? name : "N/A") + '\'' +
+                ", email='" + (email != null ? email : "N/A") + '\'' + '}';
     }
 }

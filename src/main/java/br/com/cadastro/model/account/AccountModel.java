@@ -55,11 +55,8 @@ public class AccountModel {
     @Override
     public String toString() {
         return "AccountModel{" +
-                "id=" + id +
-                ", number=" + number +
-                ", type='" + type + '\'' +
-                ", balance=" + balance +
-                ", clientModel=" + clientModel +
-                '}';
+                "number=" + number+
+                ", type='" + (type != null ? type : "N/A") + '\'' +
+                ", balance=" + balance + '}';
     }
 }

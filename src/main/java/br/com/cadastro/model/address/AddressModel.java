@@ -66,12 +66,9 @@ public class AddressModel {
     @Override
     public String toString() {
         return "AddressModel{" +
-                "id=" + id +
-                ", street='" + street + '\'' +
+                "street='" + (street != null ? street : "N/A") + '\'' +
                 ", number=" + number +
-                ", city='" + city + '\'' +
-                ", states='" + states + '\'' +
-                ", clientModel=" + clientModel +
-                '}';
+                ", city='" + (city != null ? city : "N/A") + '\'' +
+                ", states='" + (states != null ? states : "N/A") + '\'' + '}';
     }
 }
