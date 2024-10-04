@@ -1,9 +1,5 @@
 package br.com.cadastro;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Application {
-    public static void main(String[] args) {}
 import br.com.cadastro.model.account.AccountModel;
 import br.com.cadastro.model.account.AccountType;
 import br.com.cadastro.model.address.AddressModel;
