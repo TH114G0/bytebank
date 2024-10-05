@@ -23,11 +23,7 @@
 
 ## Tecnologias Utilizadas
 
-**Java** - A base do projeto, garantindo performance e escalabilidade.</br>
-**Spring Boot** - Facilita a configuração e a inicialização do projeto, permitindo um desenvolvimento ágil.</br>
-**Spring Data JPA** - Proporciona uma interface simples para acesso a dados, com suporte a consultas complexas.</br>
-**MariaDB** - Um sistema de gerenciamento de banco de dados relacional robusto e confiável.</br>
-**DBeaver** - Uma ferramenta de gerenciamento de banco de dados para facilitar a manipulação e visualização dos dados.</br>
+<img align="center" alt="Java" src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"/> - A base do projeto, garantindo performance e escalabilidade.</br></br> <img align="center" alt="Spring Boot" src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white"/> - Facilita a configuração e a inicialização do projeto, permitindo um desenvolvimento ágil.</br></br> <img align="center" alt="Spring Data JPA" src="https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/> - Proporciona uma interface simples para acesso a dados, com suporte a consultas complexas.</br></br> <img align="center" alt="MariaDB" src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white"/> - Um sistema de gerenciamento de banco de dados relacional robusto e confiável, ideal para a estrutura de dados do Bytebank.</br></br> <img align="center" alt="DBeaver" src="https://img.shields.io/badge/DBeaver-6DB33F?style=for-the-badge&logo=dbeaver&logoColor=white"/> - Uma ferramenta de gerenciamento de banco de dados versátil que facilita a manipulação e visualização dos dados, proporcionando uma experiência mais fluida para desenvolvedores e administradores de banco de dados.</br>
 
 ### Pré-requisitos
 
