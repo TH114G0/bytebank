@@ -23,11 +23,11 @@
 
 ## Tecnologias Utilizadas
 
-- Java
-- Spring Boot
-- Spring Data JPA
-- MariaDB
-- DBeaver
+**Java** - A base do projeto, garantindo performance e escalabilidade.</br>
+**Spring Boot** - Facilita a configuração e a inicialização do projeto, permitindo um desenvolvimento ágil.</br>
+**Spring Data JPA** - Proporciona uma interface simples para acesso a dados, com suporte a consultas complexas.</br>
+**MariaDB** - Um sistema de gerenciamento de banco de dados relacional robusto e confiável.</br>
+**DBeaver** - Uma ferramenta de gerenciamento de banco de dados para facilitar a manipulação e visualização dos dados.</br>
 
 ### Pré-requisitos
 
