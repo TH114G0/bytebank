@@ -4,6 +4,7 @@ import br.com.cadastro.model.account.AccountModel;
 import br.com.cadastro.model.address.AddressModel;
 import br.com.cadastro.model.client.ClientModel;
 import br.com.cadastro.repository.ClientRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,8 @@ public class ClientService {
 
     public void listClient(Long id) {
         Optional<ClientModel> client = clientRepository.findById(id);
-        System.out.println(client);
+        ClientModel clientModel = client.orElseThrow(() -> new EntityNotFoundException("Endereço não encontrado para o ID:" + id));
+        System.out.println(clientModel);
     }
 
     public boolean validateCredentials(String email, String password) {
